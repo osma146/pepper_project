@@ -1,0 +1,89 @@
+/* ===== Base Colors (Hardcoded, no CSS variables) ===== */
+body {
+  background-color: #0d0f1a;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Headings ===== */
+h1, h2 {
+  color: #9d84ff;
+}
+
+/* ===== Paragraphs ===== */
+p {
+  color: #aaaaaa;
+}
+
+/* ===== Buttons ===== */
+button, .btn {
+  background-color: #5c4dff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(92, 77, 255, 0.3);
+  transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+  background-color: #9d84ff;
+}
+
+/* ===== Inputs ===== */
+input, textarea, select {
+  background-color: #1a1d2e;
+  color: #ffffff;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* ===== Links ===== */
+a {
+  color: #9d84ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ===== Card/Box ===== */
+.card {
+  background-color: #1a1d2e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(92, 77, 255, 0.3);
+}
+
+/* ===== Utilities ===== */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.p-1 { padding: 10px; }
+.p-2 { padding: 20px; }
+
+/* ===== Simple fade-in (limited animation support) ===== */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+#logo {
+    height: 40px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pepper App</title>
+  <link rel="stylesheet" type="text/css" href="theme.css">
+</head>
+<body>
+  <div id="header-box">
+    <header>
+      <img src="logo.png" alt="Logo" id="logo">
+      <button id="theme-toggle">Toggle Theme</button>
+    </header>
+  </div>
+  <div id="body-box">
+    <main>
+      
+      <button class="code-btn" onclick="runCode(1)">Debug ON</button>
+      <button class="code-btn" onclick="runCode(2)">Debug OFF</button>
+      <button class="code-btn" onclick="runCode(3)">Run Code 3</button>
+      <button class="code-btn" onclick="runCode(4)">Run Code 4</button>
+      <button class="code-btn" onclick="runCode(5)">Run Code 5</button>
+      <button class="code-btn" onclick="runCode(6)">Run Code 6</button>
+    </main>
+  </div>
+  <script>
+    // theme toggle (old syntax, no arrow functions)
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggleBtn = document.getElementById('theme-toggle');
+      var logo = document.getElementById('logo');
+      var body = document.body;
+
+      toggleBtn.addEventListener('click', function() {
+        if (body.className.indexOf('dark') === -1) {
+          body.className += ' dark';
+          logo.src = 'logo_dark.png';
+        } else {
+          body.className = body.className.replace('dark', '').trim();
+          logo.src = 'logo.png';
+        }
+      });
+
+      // equalize button sizes manually
+
+
+      for (var i = 0; i < buttons.length; i++) {
+        var btn = buttons[i];
+        btn.style.width = 'auto';
+        btn.style.height = 'auto';
+        var rect = btn.getBoundingClientRect();
+        if (rect.width > maxW) maxW = rect.width;
+        if (rect.height > maxH) maxH = rect.height;
+      }
+
+      for (var j = 0; j < buttons.length; j++) {
+        buttons[j].style.width = maxW + 'px';
+        buttons[j].style.height = maxH + 'px';
+      }
+    });
+
+    // fallback runCode function
+    function runCode(n) {
+      var headerBox = document.getElementById('header-box');
+      var bodyBox = document.getElementById('body-box');
+
+      if (n === 1) {
+        headerBox.className = 'debug-box';
+        bodyBox.className = 'debug-box';
+      } else if (n === 2) {
+        headerBox.className = '';
+        bodyBox.className = '';
+      } else {
+        console.log("RunCode " + n);
+      }
+    }
+  </script>
+</body>
+</html>

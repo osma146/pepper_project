@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pepper App</title>
+
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    body.dark {
+      background: #222222;
+      color: #eeeeee;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 0px;
+    }
+    #header-box {
+      margin: 10px;
+    }
+    #logo {
+      height: 40px;
+    }
+
+
+    #theme-toggle {
+      padding: 8px 12px;
+      background: #e0e0e0;
+      color: #000000;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    body.dark #theme-toggle {
+      background: #444444;
+      color: #ffffff;
+    }
+
+    
+    #body-box { 
+      margin: 10px;
+    }
+
+
+
+
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+
+   .code-btn {
+    width: 25vw;
+    height: 25vh;
+    margin: 2vh 7.5vw;
+    font-size: 32px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+
+
+
+
+    body.dark .code-btn {
+      background: #444444;
+      color: #ffffff;
+    }
+    .debug-box {
+     outline: 2px dashed red;
+    }
+  </style>
+
+
+</head>
+<body>
+  <div id="header-box">
+    <header>
+      <img src="logo.png" alt="Logo" id="logo">
+      <button id="theme-toggle">Toggle Theme</button>
+    </header>
+  </div>
+  <div id="body-box">
+    <main>
+        <button class="code-btn" onclick="runCode(6)">Run Code 6</button>          
+    </main>
+  </div>
+  <script>
+    // theme toggle (old syntax, no arrow functions)
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggleBtn = document.getElementById('theme-toggle');
+      var logo = document.getElementById('logo');
+      var body = document.body;
+
+      toggleBtn.addEventListener('click', function() {
+        if (body.className.indexOf('dark') === -1) {
+          body.className += ' dark';
+          logo.src = 'logo_dark.png';
+        } else {
+          body.className = body.className.replace('dark', '').trim();
+          logo.src = 'logo.png';
+        }
+      });
+
+      // equalize button sizes manually
+      var buttons = document.getElementsByClassName('code-btn');
+
+      for (var i = 0; i < buttons.length; i++) {
+        var btn = buttons[i];
+        btn.style.width = 'auto';
+        btn.style.height = 'auto';
+        var rect = btn.getBoundingClientRect();
+        if (rect.width > maxW) maxW = rect.width;
+        if (rect.height > maxH) maxH = rect.height;
+      }
+
+      for (var j = 0; j < buttons.length; j++) {
+        buttons[j].style.width = maxW + 'px';
+        buttons[j].style.height = maxH + 'px';
+      }
+    });
+
+    function runCode(n) {
+      var headerBox = document.getElementById('header-box');
+      var bodyBox = document.getElementById('body-box');
+
+      if (n === 6) {
+
+        if (headerBox.className === '') {
+          headerBox.className = 'debug-box';
+          bodyBox.className = 'debug-box';
+        } else if (headerBox.className === 'debug-box') {
+          headerBox.className = '';
+          bodyBox.className = '';
+        }
+      }
+    }
+
+        // fallback runCode functio
+  </script>
+</body>
+</html>

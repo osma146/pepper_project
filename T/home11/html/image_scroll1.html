@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Carousel</title>
+  <link rel="stylesheet" href="css/light.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .carousel-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: rotate(0deg);
+      opacity: 0;
+      transition: transform 0.7s, opacity 0.7s;
+      background: #fff;
+    }
+
+    .carousel-image.active {
+      opacity: 1;
+      transform: translateX(0) rotate(0deg);
+      z-index: 2;
+    }
+
+    .carousel-image.exit {
+      opacity: 0;
+      transform: translateX(-100%) rotate(0deg);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <button  onclick='sendMessage({"type":"page_move","location":"home","destination":"index"})'><div id="retrun" class="header-left">return</div></button>
+  <div class="carousel-container">
+    <img class="carousel-image active" src="assets/image_scroll1/1.jpg" alt="Image 1">
+    <img class="carousel-image" src="assets/image_scroll1/2.jpg" alt="Image 2">
+    <img class="carousel-image" src="assets/image_scroll1/3.jpg" alt="Image 3">
+    <img class="carousel-image" src="assets/image_scroll1/4.jpg" alt="Image 4">
+    <img class="carousel-image" src="assets/image_scroll1/5.jpg" alt="Image 5">
+    <img class="carousel-image" src="assets/image_scroll1/6.jpg" alt="Image 6">
+    <img class="carousel-image" src="assets/image_scroll1/7.jpg" alt="Image 2">
+    <img class="carousel-image" src="assets/image_scroll1/8.jpg" alt="Image 3">
+    <img class="carousel-image" src="assets/image_scroll1/9.jpg" alt="Image 4">
+    <img class="carousel-image" src="assets/image_scroll1/10.jpg" alt="Image 5">
+    <img class="carousel-image" src="assets/image_scroll1/11.jpg" alt="Image 6">
+    <img class="carousel-image" src="assets/image_scroll1/12.jpg" alt="Image 2">
+    <img class="carousel-image" src="assets/image_scroll1/13.jpg" alt="Image 3">
+    <img class="carousel-image" src="assets/image_scroll1/14.jpg" alt="Image 4">
+    <img class="carousel-image" src="assets/image_scroll1/15.jpg" alt="Image 5">
+
+  </div>
+  <div id="status" class="status footer-right">Page loading</div>
+  
+  <script>
+    var images = document.getElementsByClassName('carousel-image');
+    var current = 0;
+
+    setInterval(function() {
+      var prev = current;
+      current = (current + 1) % images.length;
+
+      images[prev].className = images[prev].className.replace(" active", "");
+      if (images[prev].className.indexOf("exit") === -1) {
+        images[prev].className += " exit";
+      }
+
+      if (images[current].className.indexOf("active") === -1) {
+        images[current].className += " active";
+      }
+
+      (function(index) {
+        setTimeout(function() {
+          images[index].className = images[index].className.replace(" exit", "");
+        }, 700);
+      })(prev);
+    }, 5000);
+  </script>
+  <script type="text/javascript" src="js/connectpepper.js"></script>
+</body>
+</html>

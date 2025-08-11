@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+    <link rel="stylesheet" href="css/light.css">
+    </head>
+
+
+
+
+    <body>
+        <button class="button" onclick='sendMessage({"type":"page_move","location":"home","destination":"index"})'><div id="retrun" class="header-left">return</div></button>
+    <div id="Dbox"><div class="container">
+
+
+        <div id="Dbox"><div class="container"><div class="grid-container">
+
+            <div class="grid-item">
+                <button class="square-btn" style="text-align: center;">
+                <img src="assets/setting.png" style="display: inline-block; vertical-align: middle; max-width: 90%; max-height: 90%;">
+                </button>
+            </div>
+
+            <div class="grid-item"><button class="square-btn" onclick='sendMessage({"type":"page_move","location":"home","destination":"test_page"})'>Test Page</button></div>
+            <div class="grid-item"><button class="square-btn" onclick='sendMessages({"1":{"type":"command","command_type":"python","path":"/home/nao/.local/share/PackageManager/apps/home11/ars/Sound_Module.py"},"2":{"type":"page_move","location":"home","destination":"clcik_AI"}})'>AI Button Base</button></div>
+            <div class="grid-item"><button class="square-btn"  onclick="toggleDebug()">Toggle box</button></div>
+            <div class="grid-item"><button class="square-btn"  onclick="sendMessage()">Open vidio stream</button></div>
+            <div class="grid-item"><button class="square-btn"  onclick='sendMessage({"type":"page_move","location":"home","destination":"tag"})'>tag list</button></div>
+            <div class="grid-item"><button class="square-btn"  onclick="sendMessage()">extra animation</button></div>
+            <div class="grid-item"><button class="square-btn"  onclick="sendMessage()">cmd</button></div>
+            <div class="grid-item"><button class="square-btn"  onclick='sendMessage({"type":"page_move","location":"home","destination":"test_page"})'>sample</button></div>
+            <div class="grid-item"><button class="square-btn"  onclick='sendMessage({"type":"page_move","location":"home","destination":"image_scroll1"})'>image scroll 1</button></div>
+        </div></div></div>
+
+
+ 
+        <div id="status" class="status footer-right">Page loading</div>
+        
+
+
+    </div></div>
+        
+
+    <script src="js/toggleDebug.js"></script>
+    <script type="text/javascript" src="js/connectpepper.js"></script>
+
+
+    </body>
+</html>

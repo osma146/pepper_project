@@ -1,0 +1,35 @@
+<canvas id="plot" width="400" height="200"></canvas>
+<script>
+  var canvas = document.getElementById("plot");
+  var ctx = canvas.getContext("2d");
+
+  var ns = 5;     // example value
+  var Ls = 10;    // example value
+
+  // Function p_x(x)
+  function px(x) {
+    var scale = (ns / Ls) + 1;
+    var val = (x * scale) % 1;
+    return 2 * ns * (val - 0.5);
+  }
+
+  // Draw axes
+  ctx.beginPath();
+  ctx.moveTo(0, 100);
+  ctx.lineTo(400, 100);
+  ctx.strokeStyle = "#888";
+  ctx.stroke();
+
+  // Draw function
+  ctx.beginPath();
+  for (let i = 0; i < 400; i++) {
+    let x = (i / 400) * 10;  // x in range [0, 10]
+    let y = px(x);
+    let canvasY = 100 - y * 10;  // scale to canvas
+    if (i === 0) ctx.moveTo(i, canvasY);
+    else ctx.lineTo(i, canvasY);
+  }
+  ctx.strokeStyle = "blue";
+  ctx.lineWidth = 2;
+  ctx.stroke();
+</script>

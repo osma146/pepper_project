@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+    <link rel="stylesheet" href="css/light.css">
+    </head>
+
+
+
+
+    <body>
+
+         <h1>
+    
+    <div class="toggle-btn" onclick="toggleButton(this)">
+    <div class="toggle-circle"></div>
+    </div>
+    </h1>
+
+    <div id="Dbox"><div class="container">
+
+        <h2>Debug Section</h2>
+
+        <div id="Dbox"><div class="container"><div class="grid-container">
+
+            <div class="grid-item">
+                <button class="square-btn" style="text-align: center;">
+                <img src="assets/setting.png" style="display: inline-block; vertical-align: middle; max-width: 90%; max-height: 90%;">
+                </button>
+            </div>
+
+            <div class="grid-item"><button class="square-btn" onclick='sendMessage({"type":"page_move","location":"sample","destination":"test_page"})'>Test Page</button></div>
+            <div class="grid-item"><button class="square-btn">AI Button Base</button></div>
+            <div class="grid-item"><button class="square-btn"  onclick="toggleDebug()">Toggle box</button></div>
+            
+        </div></div></div>
+
+
+    </div></div>
+        
+    
+
+    <script src="js/toggleDebug.js"></script>
+    <script type="text/javascript" src="js/connectpepper.js"></script>
+
+
+    </body>
+</html>

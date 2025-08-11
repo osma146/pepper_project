@@ -1,0 +1,223 @@
+/* ========== Light Theme for Pepper (pixel-free, flexible, debug mode) ========== */
+
+/* Base layout and readable text */
+body {
+  background: #f5f5f5;        /* very light gray */
+  color: #222222;             /* dark gray text */
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Generic container for grouping elements */
+.container {
+  padding: 1em;               /* relative padding */
+}
+
+/* Debug mode: add this class to any container to show layout outline */
+.debug-box {
+  outline: 2px dashed red;
+  background: #ffeeff;
+}
+
+/* Grid container for Pepper (safe for old browser) */
+.grid-container {
+  text-align: left;    /* center all buttons horizontally */
+  font-size: 1;       /* removes space between inline-blocks */
+}
+
+.grid-container2 {
+  text-align: left;    /* center all buttons horizontally */
+  font-size: 1;       /* removes space between inline-blocks */
+}
+
+/* Grid item inside grid container */
+.grid-item {
+  display: inline-block;
+  margin: 1.5em;
+  font-size: 1em;         /* reset font size for child */
+  vertical-align: top;
+}
+
+.grid-item2 {
+  display: inline-block;
+  margin: 0.1em;
+  font-size: 1em;         /* reset font size for child */
+  vertical-align: top;
+  text-align: center;
+}
+
+
+.center-wrapper {
+  display: table;
+  width: 100%;
+  height: 100vh;             /* full screen height */
+  text-align: center;        /* center horizontally */
+}
+
+.center-cell {
+  display: table-cell;
+  vertical-align: middle;    /* center vertically */
+}
+
+
+
+
+
+
+/* buttons
+
+/* Square button: size defined by height only, width follows */
+.square-btn {
+  background: #e0e0e0;
+  color: #000000;
+  border: 1px solid #888888;
+  border-radius: 6%;          /* light rounding */
+  height: 4em;                /* scalable height */
+  width: 4em;                 /* keep square manually (aspect-ratio not supported on Pepper) */
+  font-size: 2vw;
+  box-shadow: 0 0.2em 0.4em rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1em;           /* center text vertically (approximate) */
+}
+
+.square-btn2 {
+  background: #e0e0e0;
+  color: #000000;
+  border: 1px solid #888888;
+  border-radius: 6%;          /* light rounding */
+  height: 4em;                /* scalable height */
+  width: 8em;                 /* keep square manually (aspect-ratio not supported on Pepper) */
+  font-size: 1vw;
+  box-shadow: 0 0.2em 0.4em rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1em;           /* center text vertically (approximate) */
+}
+
+/* Regular button: scalable padding, no fixed width */
+.button {
+  background: #e0e0e0;
+  color: #000000;
+  border: none;
+  border-radius: 4%;
+  padding: 0.8em 1.2em;
+  font-size: 1em;
+  box-shadow: 0 0.2em 0.4em rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.invisible-btn {
+  background: none;        /* no background */
+  border: none;            /* no border */
+  padding: 0;              /* no spacing */
+  margin: 0;
+  display: inline-block;   /* size = content size */
+  width: auto;             /* fit image width */
+  cursor: pointer;
+}
+
+.invisible-btn img {
+  width: 100%;             /* scale image to button width */
+  height: auto;            /* keep aspect ratio */
+  display: block;          /* removes inline gap */
+}
+
+
+/* after effects for button */
+
+/* Hover effect for both */
+.button:hover,
+.square-btn:hover {
+  background: #d0d0ff;
+}
+
+.toggle-btn {
+  width: 60px;
+  height: 30px;
+  background: #ccc;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-circle {
+  width: 26px;
+  height: 26px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left 0.2s;
+}
+
+.toggle-btn.active {
+  background: #4caf50;
+}
+
+.toggle-btn.active .toggle-circle {
+  left: 32px;
+}
+
+
+
+
+/* Headings */
+h1, h2, h3 {
+  color: #222222;
+  margin-bottom: 0.5em;
+}
+
+.status {
+  position: absolute;
+  font-size: 12px;
+
+
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Footer positions */
+.footer-left {
+  bottom: 0;
+  left: 0;
+}
+
+.footer-center {
+  bottom: 0;
+  left: 50%;
+  margin-left: -40px; /* Half of width */
+  width: 80px;
+  text-align: center;
+}
+
+.footer-right {
+  bottom: 0;
+  right: 0;
+}
+
+/* Header positions */
+.header-left {
+  top: 0;
+  left: 0;
+}
+
+.header-center {
+  top: 0;
+  left: 50%;
+  margin-left: -40px;
+  width: 80px;
+  text-align: center;
+}
+
+.header-right {
+  top: 0;
+  right: 0;
+}
