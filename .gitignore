@@ -1,0 +1,22 @@
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Node
+node_modules/
+dist/
+.build/
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+env/
+.egg-info/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
