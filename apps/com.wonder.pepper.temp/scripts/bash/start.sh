@@ -10,4 +10,4 @@ ssh nao@$PEPPER_IP "nohup python /home/nao/.local/share/PackageManager/apps/$APP
 echo "[OK] Started."
 
 
-qicli call ALTabletService.showWebview 'http://198.18.0.1/apps/com.wonder.pepper.temp/index.html'
+qicli call ALTabletService.showWebview 'http://198.18.0.1/apps/com.wonder.pepper.temp/index.html?version=1.0.0'

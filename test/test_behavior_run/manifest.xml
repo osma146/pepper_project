@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <name>test_behavior_run</name>
+  <version>1.0.0</version>
+  <description>Test app for running a Pepper behavior</description>
+  <uuid>d45bd58d-b1ed-42e4-89bd-4ea8b6c81a0b</uuid>
+
+  <contents>
+    <!-- Behavior -->
+    <file>behaviors/behavior_1/behavior.xar</file>
+  </contents>
+</application>
