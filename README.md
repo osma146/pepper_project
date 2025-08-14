@@ -1,27 +1,33 @@
-ChatGPT said:
-Here’s a README.md template you can drop in now — it’s generic but structured so you can just fill in the blanks as your Pepper project grows.
+# Pepper Project — pepper_APPS
 
-markdown
-Copy
-Edit
-# 🤖 Pepper Project — *Project Name Here*
+This project is a project to make a highly editable app sofware for pepper 2.5, as pepper 2.7 even though in android lack the ability to have specific programability. 
 
-A short one-liner about what this app does.  
-Example: “A Pepper robot application with tablet UI, motion control, and PC remote commands.”
-
----
+For an old machin like pepper with out version change updating the software becomes a chalenge, this project looks forword to minamize lib installing and highly dependent one outsorce data for advance thinking and interactions.
 
 ## 📂 Project Structure
-apps/
-com.jeff.pepper.home/ # Main Pepper app
-manifest.xml # App metadata
-config/ # JSON/YAML configs
-python/ # Python 2.7 services
-html/ # Tablet UI
-scripts/ # Start/stop/deploy scripts
-shared/ # Common code/assets
-deploy/ # Deployment scripts
-docs/ # Guides & notes
+
+    pepper_apps/
+    ├─ apps/
+    │ ├─ com.wonder.pepper.front/ ...           # front of page, used for login and user identify
+    │ ├─ com.wonder.pepper.home/ ...            # home page, used for listing application
+    │ └─ com.wonder.pepper.temp/ ...            # template for all apps
+    ├─ deploy/
+    │ ├─ update.py                              # update the folder to git
+    │ └─ deploy.py                              # update all file in apps to pepper
+    ├─ docs/
+    │ ├─ protocal.md                            # protocals when encountor bugs
+    │ └─ runbook.md                             # codes for what to run
+    ├─ python_pc/
+    │ ├─ open_pepper_exe/ ...                   # exe for simple users to use for open and closing pepper
+    │ └─ tools/ ...                             # tools for debug and coding
+    ├─ test/
+    │ ├─ home11/ ...                            # example for a mini app system
+    │ └─ test_name/                             # use for testing
+    │   └─ README.md                            # info of this test
+    ├─ LICENSE       
+    ├─ TODO.md                                  # TODO list
+    ├─ README.md                                # Project documentation
+    └─ .gitignore                               # Git ignore rules for unnecessary files
 
 yaml
 Copy
