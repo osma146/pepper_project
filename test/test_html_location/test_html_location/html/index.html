@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pepper Simple UI</title>
+  <meta name="viewport" content="width=1280, initial-scale=1"> <!-- Pepper tablet 1280x800 -->
+  <style>
+    /* Basic theming (no external fonts) */
+    html,body{margin:0;padding:0;height:100%;font-family:Arial,Helvetica,sans-serif}
+    body{background:#0b1020;color:#e9eef9;transition:background .2s,color .2s}
+    .light{background:#f6f8ff;color:#141a2d}
+    .bar{position:fixed;left:0;right:0;top:0;padding:10px 14px;font-size:14px;opacity:.9}
+    .bar .right{float:right}
+    .wrap{height:100%;display:flex;align-items:center;justify-content:center}
+    .card{width:680px;max-width:90vw;border-radius:12px;padding:22px 20px;background:rgba(255,255,255,0.06)}
+    .light .card{background:rgba(0,0,0,0.06)}
+    h1{margin:0 0 10px 0;font-size:28px}
+    p{margin:6px 0 16px 0}
+    .row{display:flex;flex-wrap:wrap;gap:10px}
+    button{padding:10px 14px;border:0;border-radius:8px;font-size:16px;cursor:pointer}
+    .btn{background:#1c2541;color:#e9eef9}
+    .light .btn{background:#e0e6ff;color:#141a2d}
+    .btn:active{transform:scale(0.98)}
+    #status{font-size:13px;opacity:.8;margin-top:10px}
+    canvas{display:block;width:100%;height:120px;background:rgba(255,255,255,0.05);border-radius:8px;margin-top:14px}
+    .light canvas{background:rgba(0,0,0,0.05)}
+    .small{font-size:12px;opacity:.75}
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <span> Pepper Simple UI </span>
+    <span class="right" id="clock">--:--:--</span>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <h1>Hello, Pepper 👋</h1>
+      <p>A minimal, dependency-free page compatible with the tablet’s older WebKit.</p>
+
+      <div class="row">
+        <button class="btn" id="sayBtn">Say Hello</button>
+        <button class="btn" id="themeBtn">Toggle Theme</button>
+        <button class="btn" id="pingBtn">Local Ping</button>
+      </div>
+
+      <div id="status">Ready.</div>
+
+      <canvas id="wave" width="640" height="80"></canvas>
+
+      <p class="small">
+        Tips: This page avoids modern APIs (no <code>fetch()</code>). Use <code>XMLHttpRequest</code> if you need network calls.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // ----- Theme -----
+      var theme = (function(){
+        try{ return localStorage.getItem('pepper_theme') || 'dark'; }catch(e){ return 'dark'; }
+      })();
+      function applyTheme(t){
+        if(t==='light'){ document.body.className = 'light'; } else { document.body.className = ''; }
+        try{ localStorage.setItem('pepper_theme', t); }catch(e){}
+      }
+      applyTheme(theme);
+
+      document.getElementById('themeBtn').onclick = function(){
+        theme = (theme==='light' ? 'dark' : 'light');
+        applyTheme(theme);
+        setStatus('Theme: ' + theme);
+      };
+
+      // ----- Clock -----
+      function two(n){ return (n<10?'0':'')+n; }
+      function tick(){
+        var d=new Date();
+        document.getElementById('clock').innerHTML = two(d.getHours())+':'+two(d.getMinutes())+':'+two(d.getSeconds());
+      }
+      setInterval(tick, 500); tick();
+
+      // ----- Status helper -----
+      var statusEl = document.getElementById('status');
+      function setStatus(s){ statusEl.innerHTML = s; }
+
+      // ----- Say Hello (stub you can wire to ALMemory) -----
+      document.getElementById('sayBtn').onclick = function(){
+        // Example: raise an event via a tiny HTTP bridge you host on Pepper
+        // sendEvent('com/wonder/pepper/temp/say', 'Hello from tablet');
+        setStatus('Say: "Hello from tablet" (wire this to your Python service).');
+      };
+
+      // ----- Local Ping using XHR (no external deps) -----
+      document.getElementById('pingBtn').onclick = function(){
+        // Adjust URL to your local bridge if you have one, e.g. http://198.18.0.1:PORT/ping
+        // This example just does a safe self-request to a non-existent endpoint and handles error gracefully.
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'ping.json', true); // If ping.json exists in html/, it will succeed; otherwise it will error gracefully.
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState === 4){
+            if(xhr.status >= 200 && xhr.status < 300){
+              setStatus('Ping OK: ' + (xhr.responseText || '(empty)'));
+            } else {
+              setStatus('Ping attempt finished (status '+xhr.status+'). For real use, point to your local Pepper bridge.');
+            }
+          }
+        };
+        try{ xhr.send(null); }catch(e){ setStatus('XHR error: '+e); }
+      };
+
+      // ----- Canvas wave (simple animation) -----
+      var cv = document.getElementById('wave'), ctx = cv.getContext('2d'), t = 0;
+      function draw(){
+        var w = cv.width, h = cv.height;
+        ctx.clearRect(0,0,w,h);
+        ctx.beginPath();
+        var A = 18, k = 0.02, v = 0.12;
+        for(var x=0; x<w; x++){
+          var y = h/2 + A * Math.sin(k*x + v*t);
+          if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+        }
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = (document.body.className==='light') ? '#141a2d' : '#e9eef9';
+        ctx.stroke();
+        t += 1.0;
+        (window.requestAnimationFrame || function(fn){ return setTimeout(fn, 33); })(draw);
+      }
+      draw();
+
+      // ----- Optional: simple event sender (Pepper-friendly XHR) -----
+      // function sendEvent(name, payload){
+      //   var xhr = new XMLHttpRequest();
+      //   xhr.open('POST', 'http://198.18.0.1:9001/event', true); // example; replace with your bridge
+      //   xhr.setRequestHeader('Content-Type','application/json');
+      //   xhr.send(JSON.stringify({event:name, data:payload}));
+      // }
+
+    })();
+  </script>
+</body>
+</html>

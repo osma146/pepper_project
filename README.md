@@ -55,6 +55,7 @@ See TODO.md for full task list.
 
 ## 🧩 Development Notes
 >Notes, tips, or quirks to remember while developing.
+
 Pepper tablet runs an old WebView → use ES5 JavaScript only.
 
 Avoid CSS variables; use fixed colors or preprocessor.
