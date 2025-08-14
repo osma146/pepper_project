@@ -28,14 +28,14 @@ def main(session):
         
 
         while True:
-            inp = raw_input("Press 'q' then Enter to close the webview: ")
+            inp = input("Press 'q' then Enter to close the webview: ")
             if inp.strip().lower() == 'q':
                 break
 
         tabletService.hideWebview()
 
-    except Exception, e:
-        print "Error was: ", e
+    except Exception as e:
+        print ("Error was: ", e)
 
 
 if __name__ == "__main__":

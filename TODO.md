@@ -22,9 +22,9 @@
 
 
 ### Test needed
-- [ ] camra connection
-- [x] html idex launch in app in app ==F==
-- [ ] sound supretion
+- [ ] camra connection                 
+- [x] html idex launch in app in app (unable)   
+- [ ] sound supretion                   
 - [ ] robot ROS setting extraction
 - [ ] UI speed / loading screan
 - [ ] port / web socket connection duel

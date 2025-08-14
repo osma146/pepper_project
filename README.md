@@ -25,7 +25,7 @@ For an old machin like pepper with out version change updating the software beco
     │ ├─ com.wonder.pepper.home/ ...            # home page, used for listing application
     │ └─ com.wonder.pepper.temp/ ...            # template for all apps
     ├─ deploy/
-    │ ├─ update.py                              # update the folder to git
+    │ ├─ git_update.py                              # update the folder to git
     │ └─ deploy.py                              # update all file in apps to pepper
     ├─ docs/
     │ ├─ protocal.md                            # protocals when encountor bugs
