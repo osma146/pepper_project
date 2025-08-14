@@ -49,6 +49,7 @@ This is an overview of the app Structure
 ## Usage
 
 ### Deploy to Pepper
+
 ```bash
 bash scripts/deploy.sh <pepper_ip>
 Start the App
@@ -86,15 +87,24 @@ All Python must be 2.7 compatible (NAOqi 2.5).
 Keep assets small — Pepper’s transfer speed is slow.
 
 Fonts must be included locally if not standard (hosted fonts may not load).
+```
 
-License
-You can apply your own license depending on your project’s purpose.
 
-Maintainer: Jeff (jeffhe0906@gmail.com)
+## License
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International license.
 
-pgsql
-Copy
-Edit
+You are free to:
+ - Share — copy and redistribute the material in any medium or format.
+ - Adapt — remix, transform, and build upon the material.
 
-If you want, I can also add a **“Quick Start”** section that includes the full Git setup + Pepper deploy steps so you can hand this README to someone else and they can run your project with zero extra instructions.  
-Do you want me to add that?
+Under the following terms:
+
+ - Attribution — You must give appropriate credit, provide a link to this license, and indicate if changes were made.
+ - NonCommercial — You may not use the material for commercial purposes.
+
+Full license text: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+
+#
+
+Maintainer : Jeff (jeffhe0906@gmail.com)
