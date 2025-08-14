@@ -1,0 +1,23 @@
+# VS Code local
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+env/
+*.egg-info
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Behavior build artifacts
+behavior/*.zip
+behavior/*.xar
+behavior/unpacked_xar/tmp/
