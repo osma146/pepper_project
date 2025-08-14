@@ -20,9 +20,8 @@
 - [ ] globle setting
 - [ ] start up app
 
----
 
-## Test needed
+### Test needed
 - [ ] camra connection
 - [ ] html idex launch in app in app
 - [ ] sound supretion
@@ -64,7 +63,7 @@
 - [ ] Logging and reconnect
 - [ ] data transmition to connect with tasks
 
-## 📅 Timeline Example (Dates + Priorities)
+## 📅 prioritys
 - **(A)** – finish base apps (temp home front + one entertainment)
 - **(B)** – update development tools and connection with ai
 - **(C)** – slam video strean and sound supretion
@@ -77,9 +76,6 @@
   - Alservece is not on tablet so js can't use it
 - ALMemory event naming pattern:  
     app_name/event_type/event_name/data -> com.wonder.pepper.temp/say/ttssay/{"text":"hello world"}
-  
-
----
 
 ## 🔗 Links (internal & external)
 - [Pepper NAOqi API Reference](http://doc.aldebaran.com/2-5/index.html)(http://doc.aldebaran.com/2-5/naoqi/index.html)
