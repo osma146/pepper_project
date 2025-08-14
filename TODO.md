@@ -68,6 +68,32 @@
 - **(B)** – update development tools and connection with ai
 - **(C)** – slam video strean and sound supretion
 
+## structure compleateness
+
+ - [ ] -> pepper_apps/
+ - [ ] -> ├─ apps/
+ - [ ] -> │ ├─ com.wonder.pepper.front/ ...           # front of page, used for login and user identify
+ - [ ] -> │ ├─ com.wonder.pepper.home/ ...            # home page, used for listing application
+ - [ ] -> │ └─ com.wonder.pepper.temp/ ...            # template for all apps
+ - [ ] -> ├─ deploy/
+ - [ ] -> │ ├─ git_update.py                              # update the folder to git
+ - [ ] -> │ └─ deploy.py                              # update all file in apps to pepper
+ - [ ] -> ├─ docs/
+ - [ ] -> │ ├─ protocal.md                            # protocals when encountor bugs
+ - [ ] -> │ └─ runbook.md                             # codes for what to run
+ - [ ] -> ├─ python_pc/
+ - [ ] -> │ ├─ open_pepper_exe/ ...                   # exe for simple users to use for open and closing pepper
+ - [ ] -> │ └─ tools/ ...                             # tools for debug and coding
+ - [ ] -> ├─ test/
+ - [ ] -> │ ├─ home11/ ...                            # example for a mini app system
+ - [x] -> │ ├─ test_html_location/ ...  (false)
+ - [ ] -> │ └─ test_name/                             # use for testing
+ - [ ] -> │   └─ README.md                            # info of this test
+ - [x] -> ├─ LICENSE       
+ - [x] -> ├─ TODO.md                                  # TODO list
+ - [x] -> ├─ README.md                 (edit needed)  # Project documentation
+ - [x] -> └─ .gitignore                (base ignore)  # Git ignore rules for unnecessary files
+
 ## 📌 Notes & References
 - Pepper tablet runs an **old WebView**, so:
   - No ES6+ JS (use ES5 syntax only).
