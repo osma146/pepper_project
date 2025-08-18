@@ -1,12 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<application>
-  <name>test_behavior_run</name>
-  <version>1.0.0</version>
-  <description>Test app for running a Pepper behavior</description>
-  <uuid>d45bd58d-b1ed-42e4-89bd-4ea8b6c81a0b</uuid>
-
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="untitled-faea0e" version="0.0.0">
+  <names>
+    <name lang="en_US">tai_chi</name>
+    <name lang="en_US-x-scrald">tai_chi</name>
+  </names>
+  <supportedLanguages>
+    <language>en_US</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+  </descriptionLanguages>
   <contents>
-    <!-- Behavior -->
-    <file>behaviors/behavior_1/behavior.xar</file>
+    <behaviorContent path="behavior_1">
+      <userRequestable/>
+      <nature>interactive</nature>
+      <autonomous/>
+      <permissions/>
+    </behaviorContent>
   </contents>
-</application>
+</package>

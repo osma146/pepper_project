@@ -3,7 +3,7 @@ from naoqi import ALProxy
 ip, port = "192.168.0.135", 9559
 mgr = ALProxy("ALBehaviorManager", ip, port)
 
-behavior_name = "test_behavior_run/behavior_1"
+behavior_name = "untitled-faea0e/behavior_1"
 
 if mgr.isBehaviorInstalled(behavior_name):
     mgr.runBehavior(behavior_name)
