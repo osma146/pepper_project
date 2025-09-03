@@ -2,12 +2,8 @@
 # -*- coding: utf-8 -*-
 import os, sys
 import xml.etree.ElementTree as ET
+import configparser
 
-# Py2/3 configparser
-try:
-    import configparser
-except ImportError:
-    import ConfigParser as configparser  # Py2 (Pepper)
 
 # --------- locate app root & files ----------
 if len(sys.argv) >= 2:
