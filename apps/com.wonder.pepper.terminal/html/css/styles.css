@@ -1,0 +1,12 @@
+:root {
+  --bg: #0b1020;
+  --fg: #e9eef9;
+  --btn-bg: #1c2541;
+  --btn-fg: #e9eef9;
+}
+
+html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: Arial, sans-serif; }
+.status { position:fixed; right:12px; bottom:12px; opacity:.7; font-size:14px; }
+.content { height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+button { padding:12px 18px; background:var(--btn-bg); color:var(--btn-fg); border:none; border-radius:8px; font-size:16px; }
+button:active { transform: scale(0.98); }

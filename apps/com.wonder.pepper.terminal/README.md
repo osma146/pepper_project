@@ -38,7 +38,10 @@ This is an overview of the app Structure
     ├─ behavior/
     │ ├─ behavior.xar       # (optional) Choregraphe behavior file
     │ └─ (unpacked_xar/)    # (optional) editable behavior folder
-    └─ 
+    └─ vscode/
+    ├─ settings.json        # VS Code workspace settings
+    └─ extensions.json      # Recommended VS Code extensions
+
 
 
 ---
