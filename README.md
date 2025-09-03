@@ -45,7 +45,7 @@ For an old machin like pepper with out version change updating the software beco
 ## ⚙️ Setup & Deployment
 1. Clone this repo:
    ```bash
-   git clone https://github.com/yourusername/pepper-project.git
+   git clone https://github.com/osma146/pepper_project.git
    cd pepper-project
     ```
 2. follow pepper_apps/docs/runbook.md
