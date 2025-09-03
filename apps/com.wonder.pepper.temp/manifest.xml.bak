@@ -1,9 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <application>
   <name>com.wonder.pepper.temp</name>
   <version>0.1.0</version>
   <description>Template Pepper app</description>
-  <uuid>22e49d2b-8354-4827-a2d5-ded1f573a68c</uuid>
+  <uuid>67ff59c7-66a1-4f1d-a52c-9a97c16f10c3</uuid>
   <contents>
     <file>html/index.html</file>
     <file>python/services/service.py</file>
@@ -11,4 +11,4 @@
     <file>html/css/styles.css</file>
     <file>html/js/app.js</file>
   </contents>
-<vendor>put name here</vendor></application>
+</application>

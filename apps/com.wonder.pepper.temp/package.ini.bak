@@ -2,15 +2,15 @@
 name = com.wonder.pepper.temp
 version = 0.1.0
 description = Template Pepper app (HTML + Python service)
-uuid = 22e49d2b-8354-4827-a2d5-ded1f573a68c
+uuid = 67ff59c7-66a1-4f1d-a52c-9a97c16f10c3
 url = http://198.18.0.1/apps/com.wonder.pepper.temp/html/index.html
 icon = html/assets/image/icon.png
 maintainer = Jeff <jeffhe0906@gmail.com>
 category = entertainment
 
 [content]
+# everything under this folder is installed to Pepper
 path = .
 
 [depends]
 naoqi_version = 2.5
-
