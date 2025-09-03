@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <application>
-  <name>com.wonder.pepper.temp</name>
+  <name>com.wonder.pepper.home</name>
   <version>0.1.0</version>
-  <description>This is a temp app, see TODO.md for setting up</description>
-  <uuid>8625cc6c-5e6d-4b9a-85fe-c1be4726aa3f</uuid>
+  <description>put description here</description>
+  <uuid>c986aca2-34bb-4d23-bd5f-e8bf024133b6</uuid>
   <contents>
     <file>html/index.html</file>
     <file>python/services/service.py</file>
@@ -12,7 +12,7 @@
     <file>html/js/app.js</file>
   </contents>
 
-  <vendor>osma146</vendor>
-  <maintainer>jeff</maintainer>
+  <vendor>put name here</vendor>
+  <maintainer>your name</maintainer>
   <maintainer_email>your@email</maintainer_email>
 </application>
