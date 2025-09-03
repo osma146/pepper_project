@@ -29,9 +29,10 @@
 - [ ] UI speed / loading screan
 - [ ] port / web socket connection duel
 - [ ] depth cam
-- [ ] animation / behavour package
+- [X] animation / behavour package (need perset behavour, file transfur not viable uless able find mxl)
 - [ ] ssh upload from bash win and py
 - [ ] ssh launch from bash win and py
+- [ ] find resalution of UI for spacific UI editing
 
 ## 📦 Project Structure Tasks
 
