@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-CN">
+<head>
+  <title>Pepper Home</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- 固定为与你的视口接近的宽度，避免抖动；也可改为 device-width -->
+  <meta name="viewport" content="width=980, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<div id="wallpaper"></div>
+
+<div id="statusbar">
+  <span id="clock">--:--</span>
+  <span class="spacer"></span>
+  <span class="status">Wi-Fi ▬▬▬  🔋</span>
+</div>
+
+<!-- 主容器（980×613 视口优化；自动在更窄时缩放） -->
+<div id="homewrap">
+
+  <!-- 页面切换器 -->
+  <div id="pager">
+    <a href="#" id="prev" class="arrow" aria-label="Prev">‹</a>
+    <div id="dots"></div>
+    <a href="#" id="next" class="arrow" aria-label="Next">›</a>
+  </div>
+
+  <!-- 多页 App 桌面（每页一个 .page） -->
+  <div id="pages">
+
+    <div class="page current">
+      <ul class="apps">
+        <li class="app"><a href="#" data-app="chat"><span class="icon bg1">💬</span><span class="label">Chat</span></a></li>
+        <li class="app"><a href="#" data-app="camera"><span class="icon bg2">📷</span><span class="label">Camera</span></a></li>
+        <li class="app"><a href="#" data-app="gallery"><span class="icon bg3">🖼️</span><span class="label">Gallery</span></a></li>
+        <li class="app"><a href="#" data-app="music"><span class="icon bg4">🎵</span><span class="label">Music</span></a></li>
+        <li class="app"><a href="#" data-app="map"><span class="icon bg5">🗺️</span><span class="label">Map</span></a></li>
+        <li class="app"><a href="#" data-app="browser"><span class="icon bg6">🌐</span><span class="label">Browser</span></a></li>
+
+        <li class="app"><a href="#" data-app="weather"><span class="icon bg7">⛅</span><span class="label">Weather</span></a></li>
+        <li class="app"><a href="#" data-app="notes"><span class="icon bg8">📝</span><span class="label">Notes</span></a></li>
+        <li class="app"><a href="#" data-app="docs"><span class="icon bg9">📄</span><span class="label">Docs</span></a></li>
+        <li class="app"><a href="#" data-app="video"><span class="icon bg10">🎬</span><span class="label">Video</span></a></li>
+        <li class="app"><a href="#" data-app="dial"><span class="icon bg11">📞</span><span class="label">Dial</span></a></li>
+        <li class="app"><a href="#" data-app="help"><span class="icon bg12">❓</span><span class="label">Help</span></a></li>
+      </ul>
+    </div>
+
+    <div class="page">
+      <ul class="apps">
+        <li class="app"><a href="#" data-app="settings"><span class="icon bg6">⚙️</span><span class="label">Settings</span></a></li>
+        <li class="app"><a href="#" data-app="store"><span class="icon bg5">🛍️</span><span class="label">Store</span></a></li>
+        <li class="app"><a href="#" data-app="calendar"><span class="icon bg2">📅</span><span class="label">Calendar</span></a></li>
+        <li class="app"><a href="#" data-app="clock"><span class="icon bg1">⏰</span><span class="label">Clock</span></a></li>
+        <li class="app"><a href="#" data-app="mail"><span class="icon bg4">✉️</span><span class="label">Mail</span></a></li>
+        <li class="app"><a href="#" data-app="tasks"><span class="icon bg3">✅</span><span class="label">Tasks</span></a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Dock（固定在底部，常用应用） -->
+  <div id="dock">
+    <ul class="dock-apps">
+      <li class="app"><a href="#" data-app="chat"><span class="icon dockicon">💬</span></a></li>
+      <li class="app"><a href="#" data-app="browser"><span class="icon dockicon">🌐</span></a></li>
+      <li class="app"><a href="#" data-app="music"><span class="icon dockicon">🎵</span></a></li>
+      <li class="app"><a href="#" data-app="settings"><span class="icon dockicon">⚙️</span></a></li>
+    </ul>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="app.js"></script>
+<noscript>需要启用 JavaScript。</noscript>
+</body>
+</html>
