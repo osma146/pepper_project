@@ -1,6 +1,6 @@
 [package]
 name = com.wonder.pepper.home
-version = 0.2.0
+version = 0.1.0
 description = put description here
 uuid = c986aca2-34bb-4d23-bd5f-e8bf024133b6
 url = http://198.18.0.1/apps/com.wonder.pepper.temp/html/index.html
@@ -9,9 +9,9 @@ maintainer = your name
 category = entertainment
 maintainer_email = your@email
 vendor = put name here
-tree_size = 111806
+tree_size = 101397
 main = .
-main_size = 111806
+main_size = 101397
 
 [content]
 path = .
