@@ -1,12 +1,71 @@
-:root {
-  --bg: #0b1020;
-  --fg: #e9eef9;
-  --btn-bg: #1c2541;
-  --btn-fg: #e9eef9;
+/* Fixed tablet width for Pepper */
+#container {
+  width: 980px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  font-family: monospace;
+  color: #e6e6e6;
 }
 
-html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: Arial, sans-serif; }
-.status { position:fixed; right:12px; bottom:12px; opacity:.7; font-size:14px; }
-.content { height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
-button { padding:12px 18px; background:var(--btn-bg); color:var(--btn-fg); border:none; border-radius:8px; font-size:16px; }
-button:active { transform: scale(0.98); }
+/* Toolbar */
+#toolbar {
+  padding: 8px;
+  background: #222;
+  border-bottom: 1px solid #333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+#leftTools { float: left; }
+#rightTools { float: right; }
+#toolbar .sep { color: #666; padding: 0 6px; }
+#toolbar input[type="text"] {
+  width: 320px; height: 22px; line-height: 22px;
+  background: #111; border: 1px solid #444; color: #ddd; padding: 2px 6px;
+}
+#toolbar button {
+  height: 26px; margin-left: 6px; background: #333; color: #eee;
+  border: 1px solid #555; cursor: pointer;
+}
+#toolbar button:disabled { opacity: .5; cursor: default; }
+#toolbar .chk { margin-left: 10px; }
+
+/* Status dot */
+#statusDot {
+  display: inline-block; width: 10px; height: 10px;
+  background: #a33; border-radius: 6px; margin-right: 6px; vertical-align: -1px;
+}
+
+/* Log area */
+#log {
+  height: 540px; /* fits 980 width layout nicely */
+  overflow-y: auto;
+  padding: 10px 12px;
+  background: #000;
+  color: #ddd;
+  line-height: 1.35em;
+  white-space: pre-wrap;       /* wrap long lines while keeping \n */
+  word-wrap: break-word;       /* old WebKit fallback */
+  outline: none;
+}
+.line { padding: 1px 0; }
+.ts { color: #888; }
+.msg-info { color: #d7eaff; }
+.msg-warn { color: #ffd37a; }
+.msg-err  { color: #ff8a8a; }
+.msg-sys  { color: #9bd59b; }
+
+/* Send bar */
+#sendForm {
+  padding: 8px; background: #111; border-top: 1px solid #333;
+  font-family: Arial, Helvetica, sans-serif; font-size: 13px;
+}
+#sendInput {
+  width: 780px; height: 26px; line-height: 26px;
+  background: #0d0d0d; border: 1px solid #444; color: #eee; padding: 2px 6px;
+}
+#sendBtn {
+  height: 30px; margin-left: 6px; background: #2e2e2e; color: #eee;
+  border: 1px solid #555; cursor: pointer; padding: 0 14px;
+}
+#meta { color: #8a8a8a; margin-left: 10px; }

@@ -1,5 +1,8 @@
 {
-  "APP_ID": "temp_app",
-  "WS_PORT": 9001,
-  "TABLET_URL": "http://198.18.0.1/apps/com.jeff.pepper.home/index.html"
+  "app_root": "c:\\main2\\pepper_apps\\apps\\com.wonder.pepper.terminal",
+  "apps_container": "c:\\main2\\pepper_apps\\apps",
+  "derived_prefix": "com.wonder.pepper.",
+  "namespace_counts": {
+    "com.wonder.pepper.": 4
+  }
 }

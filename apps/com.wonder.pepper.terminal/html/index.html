@@ -1,18 +1,41 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Pepper Template</title>
-  <meta name="viewport" content="width=1280, initial-scale=1"> <!-- Pepper tablet is 1280x800 -->
+  <title>Pepper Terminal</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div id="status" class="status">Loading…</div>
-  <div class="content">
-    <h1>Pepper Template</h1>
-    <button id="btn1">Say Hello</button>
-    <button id="btn2">Toggle Audio</button>
+  <div id="container">
+    <div id="toolbar">
+      <div id="leftTools">
+        <span id="statusDot"></span>
+        <span id="statusText">Disconnected</span>
+        <span class="sep">|</span>
+        <label for="wsUrl">WS:</label>
+        <input id="wsUrl" type="text" value="ws://198.18.0.1:9001">
+        <button id="connectBtn" type="button">Connect</button>
+        <button id="disconnectBtn" type="button" disabled>Disconnect</button>
+      </div>
+      <div id="rightTools">
+        <label class="chk"><input id="autoReconnect" type="checkbox" checked> Auto-reconnect</label>
+        <label class="chk"><input id="autoScroll" type="checkbox" checked> Auto-scroll</label>
+        <button id="clearBtn" type="button">Clear</button>
+        <button id="copyBtn" type="button">Copy</button>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+
+    <div id="log" tabindex="0" aria-label="Terminal log"></div>
+
+    <form id="sendForm" action="#">
+      <input id="sendInput" type="text" autocomplete="off" placeholder="Type message…  (/clear, /pause, /resume)">
+      <button id="sendBtn" type="submit">Send</button>
+      <span id="meta">Lines: <span id="lineCount">0</span> • Buffer max: <span id="maxLines">2000</span></span>
+    </form>
   </div>
+
   <script src="js/app.js"></script>
 </body>
 </html>
